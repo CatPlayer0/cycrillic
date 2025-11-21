@@ -1,8 +1,120 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        
-    </style>
-    <header>Cycrillic</header>
-    <head>Cycrillic</head>
-</html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cycrillic</title>
+<style>
+  /*is this css tidy? @w@*/
+  body{
+    text-align: center;
+    background-image: url(https://wallpapers.com/images/hd/white-pattern-background-0y4vz4yc8hegrzqc.jpg);  
+    /*    donnwanna host images lets just hope this one doesnt die >w<     */
+    background-color: #ffffff79
+  }
+  header {
+    padding: .5em;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Ubuntu', 'Arial';
+  }
+  #subheader{
+    padding: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Ubuntu', 'Arial';
+    
+  }
+  hr {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  #container {
+    /* nothing UwU*/
+  }
+  input, button {
+    font-size: 1em;
+    padding: 0.5em;
+    margin-top: 0.5em
+  }
+  #center{   
+    text-align: center;
+    background-color: #ffb496;
+
+  }
+
+  #sssdfg{
+  background-color: #ffb49669;
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.281);
+  }
+  #blurryyyyyyyyy{backdrop-filter: blur(5px)}
+  button{
+  font-size: 1.5em;
+  background-color: #ffb49634;
+  backdrop-filter: blur(3px);
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.281);
+  }
+  textarea{
+    font-size: 1.5em;
+    margin-top: 10px;
+    background-color: #ffb4964b;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.281);
+    width: 300px;
+  }
+
+  #bottom😳{
+    position: absolute;    
+    bottom: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Ubuntu', 'Arial';
+    margin-bottom: 10px
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script></head><body>
+<!--heading -->
+<div id="sssdfg">
+  <header>Cycrillic</header>
+  <div id="subheader"><p>Яерlасе уoцг lатiп сhагастегs шiтh сугilliс looк-аliкеs</p></div><!--<hr> looks tewwible-->
+</div><!--sssdfg -->
+  
+  <div id="container">
+    <textarea class="input" type="text" id="textInput" placeholder="your stuff here"></textarea></div>
+    <br /> <!--idek what it does anymore, let it stay just for the sake of it lol -->
+    <button id="python"; class="button">Cyrillify</button>
+  </div>
+  <script>
+    async function main() {
+      let pyodide = await loadPyodide();
+      document.getElementById('python').addEventListener('click', async () => {
+        let inputText = document.getElementById('textInput').value;
+        let pythonCode = `
+#python ✨magic✨
+def py_func(input_str):
+    eng_symb=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    cyr_symb=['А', 'В', 'С', 'D', 'Е', 'F', 'Ф', 'Н', 'I', 'J', 'К', 'L', 'М', 'И', 'О', 'Р', 'Q', 'Я', 'S', 'Т', 'Ц', 'V', 'Ш', 'Х', 'У', 'Z', 'а', 'ь', 'с', 'd', 'е', 'f', 'g', 'h', 'i', 'j', 'к', 'l', 'м', 'п', 'o', 'р', 'q', 'г', 's', 'т', 'ц', 'v', 'ш', 'х', 'у', 'z']
+    for i in range(len(eng_symb)):
+        input_str=input_str.replace(eng_symb[i],cyr_symb[i])
+    return input_str
+#tabulation freaks out all the time T~T
+py_func('${inputText}')
+        `;
+        try {
+          let result = await pyodide.runPythonAsync(pythonCode);
+          alert(result);
+        } catch (e) {
+          alert("Python error: " + e);
+        }
+      });
+    }
+    main();
+  </script></div>         <!--there are a bunch of extra div closures but i dont care ^^-->
+  <div id="bottom😳">  <label>@CatPlayer8274 2025</label></div>
+    </body> </html>
